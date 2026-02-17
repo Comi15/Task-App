@@ -21,7 +21,7 @@ jobs:
         run: echo "${{ secrets.DOCKERHUB_TOKEN }}" | docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
         
       - name: Check if url is valid
-        run: echo "API URL is $WEB_SOCKET_URL"
+        run: echo "API URL is ${{vars.WEB_SOCKET}}"
       
       
       # Build and push Nginx (frontend) image
