@@ -26,6 +26,7 @@ jobs:
           docker build \
             --build-arg VITE_API_URL=${{ secrets.BACKEND_URL }} \
             --build-arg VITE_WS_URL=${{ secrets.WEB_SOCKET_URL }} \
+            -f ./Frontend/Dockerfile.front
             -t ${{ secrets.DOCKERHUB_USERNAME }}/my-nginx-img:latest ./
           docker tag ${{ secrets.DOCKERHUB_USERNAME }}/my-nginx-img:latest ${{ secrets.DOCKERHUB_USERNAME }}/my-nginx-img:${{ github.sha }}
           docker push ${{ secrets.DOCKERHUB_USERNAME }}/my-nginx-img:latest
@@ -34,7 +35,7 @@ jobs:
       # Build and push Backend image
       - name: Build and push Backend image
         run: |
-          docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/my-backend-img:latest ./backend
+          docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/my-backend-img:latest -f Dockerfile.backend ./backend
           docker tag ${{ secrets.DOCKERHUB_USERNAME }}/my-backend-img:latest ${{ secrets.DOCKERHUB_USERNAME }}/my-backend-img:${{ github.sha }}
           docker push ${{ secrets.DOCKERHUB_USERNAME }}/my-backend-img:latest
           docker push ${{ secrets.DOCKERHUB_USERNAME }}/my-backend-img:${{ github.sha }}
