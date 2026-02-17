@@ -18,8 +18,9 @@ graph TD
 
     subgraph "GitHub Actions CI/CD"
         Git[Push to Main] --> Build[Build docker images]
-        Push_Images--> Docker[Docker-Hub Repository]
+        Build --> Push
+        Push[Push Images to Repository]--> SSH[SSH into the server]
         SSH --> Server[docker-compose pull &  up]
     end
 
-    SSH -.-> |Restarts| Nginx
+    
