@@ -19,7 +19,11 @@ jobs:
 
       - name: Log in to Docker Hub
         run: echo "${{ secrets.DOCKERHUB_TOKEN }}" | docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
-
+        
+      - name: Check if url is valid
+        run: echo "API URL is $WEB_SOCKET_URL"
+      
+      
       # Build and push Nginx (frontend) image
       - name: Build and push Nginx image
         run: |
