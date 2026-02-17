@@ -69,7 +69,7 @@ const TaskBoards = ({
             </option>
           ))}
         </select>
-        <ToolTip infoText="Create a new task board" right="1000" bottom="200">
+        <ToolTip infoText="Create a new task board" right="1000" bottom="100">
           <i onClick={handleAddBoardClick} className="fa-solid fa-plus"></i>
         </ToolTip>
       </div>
