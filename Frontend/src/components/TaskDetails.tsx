@@ -78,6 +78,11 @@ const TaskDetails = ({
     socket.on("updateSuccess", (successMsg) => {
       handleSuccess();
       toast.success(`Task ${successMsg as string} has been updated`);
+
+      return () => {
+        socket.off('updateSuccess');
+        socket.off("updateError");
+      }
     });
   };
   const handleDeleteTask = async (
