@@ -2,14 +2,13 @@ name: CI/CD Pipeline
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
-    branches: [ main ]
+    branches: [main]
     types: [closed]
 
 jobs:
   build-and-deploy:
-   
     if: github.event_name == 'push' || (github.event.pull_request.merged == true)
     runs-on: ubuntu-latest
 
@@ -19,16 +18,13 @@ jobs:
 
       - name: Log in to Docker Hub
         run: echo "${{ secrets.DOCKERHUB_TOKEN }}" | docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
-        
-      
+
       # Build and push Nginx (frontend) image
       - name: Build and push Nginx image
         run: |
           docker build \ 
-          --build-arg VITE_API_URL=${{ secrets.BACKEND_URL }} \
-           --build-arg VITE_WS_URL=${{ secrets.WEB_SOCKET_URL }} \
-            -f ./Frontend/Dockerfile.front \
-            -t ${{ secrets.DOCKERHUB_USERNAME }}/my-nginx-img:latest ./            
+          -f ./Frontend/Dockerfile.front \
+          -t ${{ secrets.DOCKERHUB_USERNAME }}/my-nginx-img:latest ./            
           docker tag ${{ secrets.DOCKERHUB_USERNAME }}/my-nginx-img:latest ${{ secrets.DOCKERHUB_USERNAME }}/my-nginx-img:${{ github.sha }}
           docker push ${{ secrets.DOCKERHUB_USERNAME }}/my-nginx-img:latest
           docker push ${{ secrets.DOCKERHUB_USERNAME }}/my-nginx-img:${{ github.sha }}
