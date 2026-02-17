@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import "../styles/taskBoards.css";
-import ToolTip from "./Tooltip";
 import { doGetTaskBoardsByUserId } from "../Services/taskBoardService";
 import toast from "react-hot-toast";
 import { TaskBoard } from "../types/types";
@@ -69,9 +68,8 @@ const TaskBoards = ({
             </option>
           ))}
         </select>
-        <ToolTip infoText="Create a new task board" right="1000" bottom="100">
-          <i onClick={handleAddBoardClick} className="fa-solid fa-plus"></i>
-        </ToolTip>
+
+        <i onClick={handleAddBoardClick} className="fa-solid fa-plus"></i>
       </div>
     </div>
   );
