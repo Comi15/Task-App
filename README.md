@@ -17,9 +17,9 @@ graph TD
     end
 
     subgraph "GitHub Actions CI/CD"
-        Git[Push to Main] --> Build[Build React dist]
-        Build --> SCP[SCP: Transfer Files]
-        SCP --> SSH[SSH: docker-compose up]
+        Git[Push to Main] --> Build[Build docker images]
+        Push_Images--> Docker[Docker-Hub Repository]
+        SSH --> Server[docker-compose pull &  up]
     end
 
     SSH -.-> |Restarts| Nginx
