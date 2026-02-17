@@ -26,7 +26,7 @@ jobs:
           docker build \
             --build-arg VITE_API_URL=${{ secrets.BACKEND_URL }} \
             --build-arg VITE_WS_URL=${{ secrets.WEB_SOCKET_URL }} \
-            -t ${{ secrets.DOCKERHUB_USERNAME }}/my-nginx-img:latest ./nginx
+            -t ${{ secrets.DOCKERHUB_USERNAME }}/my-nginx-img:latest ./
           docker tag ${{ secrets.DOCKERHUB_USERNAME }}/my-nginx-img:latest ${{ secrets.DOCKERHUB_USERNAME }}/my-nginx-img:${{ github.sha }}
           docker push ${{ secrets.DOCKERHUB_USERNAME }}/my-nginx-img:latest
           docker push ${{ secrets.DOCKERHUB_USERNAME }}/my-nginx-img:${{ github.sha }}
