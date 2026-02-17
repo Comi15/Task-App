@@ -1,0 +1,68 @@
+# docker-compose.yml
+version: '3.8'
+
+services:
+  nginx:
+    build:
+      context: ./
+      dockerfile: ./Frontend/Dockerfile.front
+    image: my-nginx-img
+    container_name: nginx
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    restart: always
+  # react-frontend:
+  #   build:
+  #     context: ./Task-Manager-Front-main
+  #     dockerfile: Dockerfile.front   
+  #   container_name: react-dev
+  #   ports:
+  #     - "5173:5173"
+  #   env_file:
+  #     - ./Task-Manager-Front-main/.env
+  #   volumes:
+  #     - ./Task-Manager-Front-main:/app:z
+  #     - /app/node_modules
+  #   environment:
+  #     - CHOKIDAR_USEPOLLING=true
+
+  backend:
+    build:
+      context: ./Backend
+      dockerfile: Dockerfile.backend
+    container_name: node-backend
+    image: my-backend-img
+    environment:
+      DB_USER: ${DB_USER}
+      DB_HOST: ${DB_HOST}
+      DB_NAME: ${DB_NAME}
+      DB_PASSWORD: ${DB_PASSWORD}
+      DB_PORT: ${DB_PORT}
+      FRONT_URL: ${FRONT_URL}
+      TOKEN_KEY: ${TOKEN_KEY}
+    depends_on:
+      postgres:
+        condition: service_healthy
+    # volumes:
+    #   - ./Task-Manager-BackEnd-main:/app:z
+    #   - /app/node_modules
+  postgres:
+    image: postgres:15-alpine
+    container_name: dev-postgres
+    environment:
+      POSTGRES_USER: ${DB_USER}      
+      POSTGRES_PASSWORD: ${DB_PASSWORD}  
+      POSTGRES_DB: ${DB_NAME}                         
+    volumes:
+      - postgres_data:/var/lib/postgresql/data  
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U dev_user -d dev_db"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+  
+volumes:
+  postgres_data:                 

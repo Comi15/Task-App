@@ -1,0 +1,30 @@
+.tooltip-container{
+    display:flex;
+    flex-direction: column;
+    gap:20px;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    height: 20px;    
+}
+
+.tooltip{
+    font-size: 12px;
+    font-weight: 400;
+    background-color: rgb(105, 80, 80);
+    padding: 5px;
+    border-radius: 6px;
+    border: 1px solid wheat;
+    position: absolute;
+    transition: all 300ms ease;
+    opacity: 0;
+    text-align: center;
+    position: absolute;
+    bottom:30px;
+    right: 10px;
+    z-index: 100;
+}
+
+.tooltip.active{
+    opacity: 1;
+}

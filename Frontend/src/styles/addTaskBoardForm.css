@@ -1,0 +1,34 @@
+.taskboard-form{
+    display: flex;
+    gap:10px;
+    position: relative;
+    left:315px;
+    bottom: 42px;
+    z-index: 100;
+    border: 1px solid white;
+    padding: 3px 3px;
+    border-radius: 5px;
+    background-color: wheat;
+}
+.taskboard-form input{
+    padding: 0px 5px;
+    border-radius: 5px;
+    outline:none;
+    border: none;
+    background-color: rgba(128, 128, 128, 0.411);
+    color:white;
+}
+
+.taskboard-form button{
+    border: none;
+    background-color: rgba(4, 128, 0, 0.795);
+    padding: 5px 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 300ms ease-in-out;
+    font-weight: bold;
+    transition: all 300ms ease;
+}
+.taskboard-form button:hover{
+    color:white;
+}

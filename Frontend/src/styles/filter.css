@@ -1,0 +1,45 @@
+.filter-container {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+
+
+.filter-container button {
+  border: none;
+  background-color: rgba(0, 19, 128, 0.795);
+  padding: 10px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 300ms ease-in-out;
+  font-weight: bold;
+  color: wheat;
+}
+.filter-container button:hover{
+    transform: scale(1.05);
+    color:white;
+}
+#clear-filters-btn{
+    background-color: orange;
+}
+.filter-container select {
+  cursor: pointer;
+  transition: all 300ms ease-in;
+  color: white;
+  background-color: rgba(4, 20, 105, 0.664);
+  width: 100px;
+  border-radius: 10px;
+  padding: 5px 5px;
+}
+
+
+.filter-priority-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.date-filter-container {
+  display: flex;
+  gap: 10px;
+}

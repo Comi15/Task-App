@@ -1,0 +1,131 @@
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background-color: gray;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(#642bff, #ff22e6);
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.dashboard-container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  flex-direction: column;
+  row-gap: 50px;
+}
+.dashboard-container .add-task-button {
+  border: none;
+  background-color: rgba(0, 19, 128, 0.795);
+  padding: 10px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 300ms ease-in-out;
+  font-weight: bold;
+  color: wheat;
+  position: absolute;
+  top: 5%;
+  left: 40%;
+}
+.dashboard-container .add-task-button:hover {
+  color: white;
+  transform: scale(1.05);
+}
+.dashboard-container .add-task-button:hover {
+  color: white;
+  transform: scale(1.05);
+}
+
+.filter-tasks-container {
+  display: flex;
+  height: 100vh;
+  /* margin-top: 10vh; */
+  width: 100%;
+
+}
+.filter-tasks-container .side-section {
+  flex:2;
+  background-color: rgba(10, 10, 154, 0.363);
+  display: flex;
+  flex-direction: column;
+  padding: 10px 10px;
+  align-items: flex-start;
+  color:white;
+  row-gap: 10px;
+}
+
+.filter-tasks-container .side-section select{
+  cursor: pointer;
+  transition: all 300ms ease-in;
+  color: white;
+  background-color: rgba(4, 20, 105, 0.664);
+  width: 100px;
+  border-radius: 10px;
+  padding: 5px 5px;
+}
+
+.all-tasks-container {
+  display: flex;
+  align-items: center;
+  flex:6;
+  column-gap: 20px;
+  background-image: linear-gradient(rgb(92, 92, 68), rgb(9, 0, 128));
+  padding: 50px 50px;
+  position: relative;
+}
+.all-tasks-container .tasks-header-nav {
+  background-color: rgba(97, 90, 90, 0.466);
+  width: 100%;
+  height: 100px;
+  position: absolute;
+  left: 0;
+  top:0;
+  color: white;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 0px 10px;
+}
+
+.all-tasks-container .task-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  row-gap: 15px;
+  height: 50vh;
+  padding: 20px 20px;
+  background-color: rgba(12, 6, 59, 0.849);
+  border-radius: 10px;
+  color: white;
+  overflow-y: auto;
+}
+
+.logout-btn {
+  display: inline-block;
+  padding: 12px 20px;
+  font-size: 0.8rem;
+  margin: 5px 5px;
+  font-weight: 600;
+  color: #fff;
+  background: linear-gradient(rgb(92, 92, 68), rgb(9, 0, 128));
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  text-align: center;
+  text-decoration: none;
+
+}
+
+/* Hover effect */
+.logout-btn:hover {
+  background: linear-gradient(rgb(92, 92, 68), rgb(15, 3, 183));
+  
+}

@@ -1,0 +1,180 @@
+.sign-up-container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.sign-up-box {
+  flex:1; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  padding: 40px;
+  height: 100%;
+  background: linear-gradient(135deg, #372be3 0%, #e9ecef 100%);
+}
+
+.sign-up-inputs-container {
+  width: 100%; 
+  max-width: 400px; 
+  background: #fff; 
+  padding: 40px; 
+  border-radius: 12px; 
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+}
+.sign-up-inputs-container .submit-btn {
+  width: 100%; 
+  padding: 12px; 
+  background-color: #007bff; 
+  border: none; 
+  border-radius: 8px; 
+  color: #fff; 
+  font-size: 0.8rem; 
+  font-weight: 500; 
+  cursor: pointer; 
+  transition: background-color 0.2s ease;
+  margin-top: 10px;
+}
+.sign-up-inputs-container .submit-btn:hover {
+  background-color: #0056b3;
+}
+.sign-up-inputs-container input {
+  width: 100%; 
+  padding: 5px 10px; 
+  margin-bottom: 5px; 
+  border: 1px solid #ccc; 
+  border-radius: 8px; 
+  font-size: 0.8rem; 
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.sign-up-inputs-container input:focus {
+  outline: none; 
+  border-color: #007bff; 
+  box-shadow: 0 0 0 3px rgba(0,123,255,0.15);
+}
+.sign-up-inputs-container input:hover {
+  outline: 1px solid rgb(46, 128, 182);
+}
+.input-div {
+  position: relative;
+}
+.input-div .input-svg {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  right: 2px;
+  top: 2px;
+}
+
+.input-div #password:focus ~ .pass-input-instructions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.pass-input-instructions {
+  font-size: 0.8rem;
+  display: none;
+  transition: all 300ms ease;
+}
+.pass-input-instructions p {
+  padding: 10px 5px;
+}
+
+.register-select {
+  appearance: none; /* remove default browser styles */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 10px 5px;
+  font-size: 0.8rem;
+  font-family: system-ui, sans-serif;
+  color: #333;
+  cursor: pointer;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  width: 100%;
+  background-color: #fff;
+
+
+  /* custom dropdown arrow */
+  background-image: url("data:image/svg+xml;utf8,<svg fill='%23333' height='20' viewBox='0 0 24 24' width='20' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 16px;
+}
+
+.register-select:hover {
+  border-color: #888;
+}
+
+.register-select:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+}
+
+.register-select:disabled {
+  background-color: #f5f5f5;
+  color: #999;
+  cursor: not-allowed;
+}
+.register-img-container {
+  flex: 1; 
+  background: url('/images/laptop2.jpg') no-repeat center center; 
+  background-size: cover; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  color: #fff; 
+  font-size: 2rem; 
+  font-weight: bold; 
+  text-shadow: 0 2px 6px rgba(0,0,0,0.4);
+  height: 100%;
+}
+
+.auth-toggle { 
+  width: 300px; 
+  margin: 0 auto; 
+  text-align: center; 
+  font-family: system-ui, sans-serif; 
+}
+
+.slider { 
+  display: flex; 
+  justify-content: space-between; 
+  background: #e9ecef; 
+  border-radius: 30px; 
+  padding: 4px; 
+  margin-bottom: 24px; 
+  position: relative; 
+}
+
+.slider .button-sl { 
+  flex: 1; 
+  padding: 10px 0; 
+  border: none; 
+  background: transparent; 
+  font-size: 16px; 
+  font-weight: 500; 
+  cursor: pointer; 
+  z-index: 2; 
+  color: #333; 
+}
+
+.slider::before { 
+  content: ""; 
+  position: absolute; 
+  top: 4px; 
+  bottom: 4px; 
+  width: 50%; 
+  border-radius: 30px; 
+  background: linear-gradient(135deg, #372be3 0%, #e9ecef 100%); 
+  transition: transform 0.3s ease; 
+  z-index: 1; 
+}
+
+.slider.left::before { transform: translateX(0%); }
+.slider.right::before { transform: translateX(100%); }

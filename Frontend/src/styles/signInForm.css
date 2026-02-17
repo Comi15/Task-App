@@ -1,0 +1,58 @@
+.sign-in-container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.log-in-form {
+  width: 100%; 
+  max-width: 400px; 
+  background: #fff; 
+  padding: 40px; 
+  border-radius: 12px; 
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+}
+
+.log-in-form .sign-in-btn {
+  width: 100%; 
+  padding: 12px; 
+  background-color: #007bff; 
+  border: none; 
+  border-radius: 8px; 
+  color: #fff; 
+  font-size: 0.8rem; 
+  font-weight: 500; 
+  cursor: pointer; 
+  transition: background-color 0.2s ease;
+  margin-top: 10px;
+}
+.log-in-form .sign-in-btn:hover {
+  background-color: #0056b3;
+}
+.log-in-form input {
+  width: 100%; 
+  padding: 5px 10px; 
+  margin-bottom: 5px; 
+  border: 1px solid #ccc; 
+  border-radius: 8px; 
+  font-size: 0.8rem; 
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.log-in-form input:focus {
+  outline: none; 
+  border-color: #007bff; 
+  box-shadow: 0 0 0 3px rgba(0,123,255,0.15);
+}
+.log-in-form input:hover {
+  outline: 1px solid rgb(46, 128, 182);
+  
+}
+
+.password-reset-link {
+  cursor: pointer;
+  transition: all 300ms ease;
+}
+.password-reset-link:hover {
+  color: blue;
+}

@@ -1,0 +1,33 @@
+.search-container {
+  margin-right: 30%;
+  display: flex;
+  width: 300px;
+  position: relative;
+}
+
+.search-container input {
+  width: 280px;
+  height: 20px;
+  border: none;
+  padding: 0px 10px;
+  outline: none;
+  transition: all 300ms ease-in-out;
+}
+.search-container input:hover{
+    outline:1px solid blue;
+}
+.search-container input:focus{
+    outline:1px solid blue;
+
+}
+.search-icon-div {
+  display: flex;
+  position: absolute;
+  right: 0;
+  background-color: rgb(75, 50, 121);
+  transition: all 300ms ease-in-out;
+}
+.search-icon-div svg {
+  width: 20px;
+  height: 20px;
+}

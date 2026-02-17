@@ -1,0 +1,36 @@
+.reset-container{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.reset-container form{
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+    padding: 20px 20px;
+    background-color: wheat;
+    border-radius: 10px;
+}
+.reset-container form input{
+    padding: 5px 5px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    background-color: rgba(128, 128, 128, 0.404);
+}
+
+.reset-container form button{
+    border: none;
+    background-color: rgba(4, 128, 0, 0.795);
+    padding: 5px 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 300ms ease-in-out;
+    font-weight: bold;
+    transition: all 300ms ease;
+}
+.reset-container form button:hover{
+    color:white;
+}

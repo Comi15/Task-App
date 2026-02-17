@@ -1,0 +1,6 @@
+.task-progress-container{
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    margin-top: 1rem;
+}

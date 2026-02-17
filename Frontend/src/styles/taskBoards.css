@@ -1,0 +1,28 @@
+.taskboards-container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    row-gap: 5px;
+}
+
+
+.taskboards-icon-select{
+display: flex;
+width: 100%;
+justify-content: space-between;
+}
+
+#task-boards-select{
+    width: 50%;
+}
+
+.taskboards-icon-select i{
+    cursor: pointer;
+    align-self: center;
+    
+}
+
+.taskboards-icon-select i:hover{
+    border-radius: 50%;
+    background-color: rgba(141, 131, 131, 0.925);
+}

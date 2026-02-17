@@ -1,0 +1,130 @@
+.task-details-container {
+  position: fixed;
+  top: 300px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 20px 20px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  z-index: 102;
+  box-shadow: 0rem 0rem 0.5rem rgb(31, 35, 101);
+}
+.task-details-container input{
+  width: 100%; 
+  padding: 5px 10px; 
+  margin-bottom: 5px; 
+  border: 1px solid #ccc; 
+  border-radius: 8px; 
+  font-size: 0.8rem; 
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.task-details-container input:hover{
+  outline: 1px solid rgb(46, 128, 182);
+  
+}
+.task-details-container input:focus{
+  outline: none; 
+  border-color: #007bff; 
+  box-shadow: 0 0 0 3px rgba(0,123,255,0.15);
+}
+
+.task-details-container textarea {
+  border: 1px solid #ccc; 
+  padding: 5px 10px;
+  border-radius: 8px;
+}
+.task-details-container textarea:focus {
+  outline: none; 
+  border-color: #007bff; 
+  box-shadow: 0 0 0 3px rgba(0,123,255,0.15);
+}
+
+.task-details-container textarea:hover {
+  outline: 1px solid rgb(46, 128, 182);
+
+}
+
+.task-details-container select {
+  padding: 5px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.task-details-container .save-ch-btn{
+  border: none;
+  background-color: rgba(0, 19, 128, 0.795);
+  padding: 10px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 300ms ease-in-out;
+  font-weight: bold;
+  color: wheat;
+}
+.task-details-container .save-ch-btn:hover{
+  color: white;
+  transform: scale(1.05);
+}
+.task-details-container .save-ch-btn:disabled{
+  background-color: rgb(1, 34, 1);
+  color:black;
+  cursor: normal;
+}
+.task-details-container .save-ch-btn:disabled:hover{
+  background-color: rgb(1, 34, 1);
+  color:black;
+  transform: none;
+  cursor:not-allowed;
+}
+
+.del-btn{
+  border: none;
+  background-color: rgba(128, 9, 0, 0.795);
+  padding: 10px 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 300ms ease-in-out;
+  font-weight: bold;
+  color: wheat;
+}
+.del-btn:hover{
+  transform: scale(1.05);
+  color:white;
+}
+.save-ch-btn-del-btn-container{
+  display: flex;
+  column-gap: 20px;
+}
+
+.task-details-container label {
+  align-self: flex-start;
+}
+.details-header-container {
+  display: flex;
+  padding: 10px 10px;
+  width: 100%;
+}
+
+.details-header-container .cancel-icon-div {
+  height: 20px;
+  width: 20px;
+  margin-left: auto;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: all 300ms ease;
+}
+.details-header-container .cancel-icon-div:hover {
+  background-color: rgb(0, 174, 255);
+}
+
+.details-title-container input {
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 10px 10px;
+}
