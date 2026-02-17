@@ -50,5 +50,6 @@ jobs:
           port: ${{secrets.SSH_PORT}}
           script: |
             cd /home/azureuser/app
+            echo "${{ secrets.DOCKERHUB_TOKEN }}" | docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
             docker compose -f docker-compose.prod.yml pull
             docker compose -f docker-compose.prod.yml up -d
