@@ -35,7 +35,7 @@ jobs:
       # Build and push Backend image
       - name: Build and push Backend image
         run: |
-          docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/my-backend-img:latest -f Dockerfile.backend ./backend
+          docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/my-backend-img:latest -f Dockerfile.backend ./Backend
           docker tag ${{ secrets.DOCKERHUB_USERNAME }}/my-backend-img:latest ${{ secrets.DOCKERHUB_USERNAME }}/my-backend-img:${{ github.sha }}
           docker push ${{ secrets.DOCKERHUB_USERNAME }}/my-backend-img:latest
           docker push ${{ secrets.DOCKERHUB_USERNAME }}/my-backend-img:${{ github.sha }}
