@@ -55,7 +55,7 @@ const TaskDetails = ({
   };
 
   useEffect(() => {
-    const socket = io(import.meta.env.VITE_WS_URL, {
+    const socket = io("https://taskappv1.webi.rs", {
       withCredentials: true,
     });
     setSocket(socket);
